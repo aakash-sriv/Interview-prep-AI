@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Inputs/Input';
 import { div } from 'framer-motion/client';
 import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector';
+import { validateEmail } from '../../utils/helper';
 
 const SignUp = ({setCurrentPage}) => {
   const[profilePic ,setProfilePic] = useState(null);
@@ -17,7 +18,36 @@ const SignUp = ({setCurrentPage}) => {
 
   const handleSignUp = async(e) => {
     e.preventDefault();
-  };
+
+    let profileImageUrl = "";
+
+    if(!fullName) {
+      setError("Please full name.")
+      return;
+    }
+
+    if(!validateEmail(email)) {
+      setError("Please enter a valid email address")
+      return;
+    }
+
+    if(!password){
+      setError("Please enter a password ")
+      return;
+    }
+
+    setError("");
+
+    //signup api call
+    try {
+    } catch (error) {
+      if(error.response && error.response.data.message) {
+        setError(error.response.data.message);
+      } else {
+        setError("Something went wrong.  bro try again na")
+      }
+    }    
+};
 
   return <div className='w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center'>
           <h3 className='text-lg font-semibold text-black'>Create an account</h3>
@@ -52,14 +82,14 @@ const SignUp = ({setCurrentPage}) => {
                   value={password}
                   onChange={({target}) => setPassword(target.value)}
                   label= "password"
-                  placeholder= "MIn 8 characters"
+                  placeholder= "Min 8 characters"
                   type="password"
                 />
               </div>
 
               {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
 
-                <button type='submit' className=''>
+                <button type='submit' className='btn-primary'>
                   Sign Up
                 </button>
                 <p className='text-[13px] text-slate-800 mt-3'>

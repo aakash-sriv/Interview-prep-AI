@@ -4,8 +4,9 @@ const cors = require("cors");
 const path = require("path");
 const connectDB = require("./config/db");
 const { generateKey } = require("crypto");
-const authRoutes = require("./routes/authRoutes");
 
+const authRoutes = require("./routes/authRoutes");
+const sessionRoutes = require("./routes/sessionRoutes");
 
 const app = express();
 

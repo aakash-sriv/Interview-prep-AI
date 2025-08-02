@@ -6,9 +6,11 @@ import { Toaster } from 'react-hot-toast';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Home/Dashboard';
 import InterviewPrep from './pages/InterviewPrep/InterviewPrep';
+import UserProvider from './context/Usercontext';
 
 const App = () => {
   return (
+    <UserProvider>
     <div>
        <Router>
           <Routes>
@@ -30,6 +32,7 @@ const App = () => {
           }}
         />
     </div>
+    </UserProvider>
   )
 }
 

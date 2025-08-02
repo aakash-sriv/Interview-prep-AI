@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Modal from "../components/Modal"
 import hero_page from "../assets/hero_page.png";
 import {APP_FEATURES} from "../utils/data"; 
 import { useNavigate } from 'react-router-dom';
 import { LuSparkles } from 'react-icons/lu';
 import { div } from 'framer-motion/client';
-
+import  ProfileInfoCard  from "../components/Cards/ProfileInfoCard"
 import Login from '../pages/Auth/Login';
 import SignUp from '../pages/Auth/SignUp';
+import { UserContext } from '../context/Usercontext';
 
 const LandingPage = () => {
 
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const[openAuthModel , setOpenAuthModel] = useState(false);
   
   const[currentPage , setCurrentPage] = useState("login");
 
-  const handleCTA = () => {}; 
+  const handleCTA = () => {
+    if(!user) {
+      setOpenAuthModel(true);
+    } else {
+      navigate("/dashboard");
+    }
+  }; 
 
   return (
     <>
@@ -25,13 +33,18 @@ const LandingPage = () => {
           <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
-            <div className='text-xl text-black font-bold'>Interview Prep AI</div>
+            <div className='text-xl text-black font-bold'>
+              Interview Prep AI
+            </div>
+            {user ? (<ProfileInfoCard /> 
+            ) : (
             <button
             className='bg-linear-to-r from-[#FF9234] to-[#e8974b] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer '
             onClick={()=> setOpenAuthModel(true)}
             >
               Login / Sign  Up
             </button>
+            )}
           </header>
 
         {/* Hero content */}

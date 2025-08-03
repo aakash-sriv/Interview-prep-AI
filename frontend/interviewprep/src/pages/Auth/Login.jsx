@@ -1,5 +1,5 @@
 import { div } from 'framer-motion/client';
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
@@ -102,4 +102,4 @@ const Login = ({setCurrentPage}) => {
   );
 };
 
-export default Login
+export default Login;

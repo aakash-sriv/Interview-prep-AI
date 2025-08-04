@@ -11,11 +11,6 @@ export const CARD_BG = [
     {id: 10, bgcolor: 'linear-gradient(135deg, #fef2f2 0%, #fff8f8 100%)'}
 ];
 
-
-
-
-
-
 export const APP_FEATURES = [
     {
         id:"01",

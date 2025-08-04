@@ -16,7 +16,7 @@ export const API_PATHS = {
         GENERATE_EXPLANATION: "/api/ai/generate-explanation" //generate concept explanation using gemini
     },
 
-    SESSION: {
+    SESSION : {
         CREATE : "/api/sessions/create", // create a new interview session with questions
         GET_ALL : "/api/sessions/my-sessions" , //  get all user sessions
         GET_ONE : (id) => `/api/sessions/${id}` , // get session details with questions

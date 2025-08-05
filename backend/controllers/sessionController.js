@@ -13,7 +13,7 @@ exports.createSession = async(req , res) => {
 
         const session = await Session.create({
             user : userId,
-            role , experience , topicsToFocus ,description
+            role , experience , topicsToFocus ,description  
         });
 
         const questionDocs = await Promise.all(
@@ -42,7 +42,7 @@ exports.createSession = async(req , res) => {
 
 exports.getMySessions = async (req , res) => {
     try {
-        const sessions = await Session.find({ user: req.user.id })
+        const sessions = await Session.find({ user: req.user._id })
         .sort({ createdAt :-1})
         .populate("questions")
         res.status(200).json(sessions);

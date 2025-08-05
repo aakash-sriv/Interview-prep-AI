@@ -2,9 +2,9 @@ import axios from "axios";
 import { BASE_URL } from "./apiPaths";
 
 const axiosInstance = axios.create({
-    baseURL : BASE_URL ,
-    timeout : 80000 ,
-    headers : {
+    baseURL: BASE_URL ,
+    timeout: 80000 ,
+    headers: {
         "Content-Type" : "application/json" ,
         Accept : "application/json",
     },
@@ -18,6 +18,14 @@ axiosInstance.interceptors.request.use(
         if(accessToken) {
             config.headers.Authorization = `Bearer ${accessToken}`;
         }
+        //check
+        console.log("🔻 Axios Request:", {
+      url: config.url,
+      method: config.method,
+      headers: config.headers,
+    });
+    // check
+
         return config;
     },
     (error) => {

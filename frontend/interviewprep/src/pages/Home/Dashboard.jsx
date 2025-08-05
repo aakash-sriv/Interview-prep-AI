@@ -36,6 +36,7 @@ const Dashboard = () => {
   useEffect(() => {
     fetchAllSessions();
   }, []);
+  console.log(sessions) // check
   return (
     <DashboardLayout>
       <div className='container mx-auto pt-4 pb-4'>

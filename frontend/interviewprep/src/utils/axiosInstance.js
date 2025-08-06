@@ -18,13 +18,7 @@ axiosInstance.interceptors.request.use(
         if(accessToken) {
             config.headers.Authorization = `Bearer ${accessToken}`;
         }
-        //check
-        console.log("🔻 Axios Request:", {
-      url: config.url,
-      method: config.method,
-      headers: config.headers,
-    });
-    // check
+
 
         return config;
     },

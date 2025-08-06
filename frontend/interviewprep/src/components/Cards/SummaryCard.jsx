@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { LuTrash2 } from 'react-icons/lu';
+import { getInitials } from '../../utils/helper';
+
 
 const SummaryCard = ({colors,role,topicsToFocus,experience ,questions,description,lastUpdated,onSelect,onDelete
 }) => {
@@ -15,7 +18,7 @@ const SummaryCard = ({colors,role,topicsToFocus,experience ,questions,descriptio
             <div className='flex items-start'>
                 <div className='flex-shrink-0 w-12 h-12 bg-white rounded-md flex items-center justify-center mr-4'>
                     <span className='text-lg font-semibold text-black'>
-                        GU
+                        {getInitials(role)}
                     </span>
                 </div>
                 {/*Content container*/}
@@ -38,14 +41,14 @@ const SummaryCard = ({colors,role,topicsToFocus,experience ,questions,descriptio
                     onDelete();
                 }}
             >
-                delete
+                <LuTrash2/>
             </button>
         </div>
 
         <div className='px-3 pb-3'>
             <div className='flex items-center gap-3 mt-4'>
                 <div className='text-[10px] font-medium text-black px-3 py-1 border-[0.5px] border-gray-900 rounded-full'>
-                    Experience: {experience} {experience ==1 ? "Year" : "Years"}
+                    Experience: {experience} {experience == 1 ? "Year" : "Years"}
                 </div>
 
                 <div className='text-[10px] font-medium text-black px-3 py-1 border-[0.5px] border-gray-900 rounded-full'>

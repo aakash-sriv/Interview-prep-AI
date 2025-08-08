@@ -19,7 +19,7 @@ const App = () => {
 
               
               <Route path='/dashboard' element = {<Dashboard/> }/>
-              <Route path='/interview-prep/:sessionID' element = {<InterviewPrep/> }/>
+              <Route path='/interview-prep/:sessionId' element = {<InterviewPrep/> }/>
             </Routes>      
         </Router> 
 

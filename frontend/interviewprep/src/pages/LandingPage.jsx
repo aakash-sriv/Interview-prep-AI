@@ -9,6 +9,7 @@ import  ProfileInfoCard  from "../components/Cards/ProfileInfoCard"
 import Login from '../pages/Auth/Login';
 import SignUp from '../pages/Auth/SignUp';
 import { UserContext } from '../context/Usercontext';
+import demologo from "../assets/demologo.jpg"
 
 const LandingPage = () => {
 
@@ -33,8 +34,11 @@ const LandingPage = () => {
           <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
-            <div className='text-xl text-black font-bold'>
-              Interview Prep AI
+            <div className='flex items-center mr-3'>
+              <img src={demologo} alt="logo" className='w-[100px] h-[100px] mt-5 mr-6 rounded-sm '/>
+              <div className='text-xl text-sky-950 font-bold mt-4 hover:shadow-2xl hover:shadow-orange-500'>
+                PrepPerfect
+              </div>
             </div>
             {user ? (<ProfileInfoCard /> 
             ) : (

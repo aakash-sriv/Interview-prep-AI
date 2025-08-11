@@ -36,7 +36,7 @@ const LandingPage = () => {
           <header className='flex justify-between items-center mb-16'>
             <div className='flex items-center mr-3'>
               <img src={demologo} alt="logo" className='w-[100px] h-[100px] mt-5 mr-6 rounded-sm '/>
-              <div className='text-xl text-sky-950 font-bold mt-4 hover:shadow-2xl hover:shadow-orange-500'>
+              <div className='text-3xl text-sky-950 font-bold mt-4 hover:shadow-2xl hover:shadow-orange-500'>
                 PrepPerfect
               </div>
             </div>

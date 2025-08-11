@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='container mx-auto flex items-center justify-between gap-5'>
             <Link to="/dashboard">
             <div className='flex items-center'>            
-                <img src={demologo} alt="logo" className='w-[50px] h-[50px] mr-3 rounded-full'/>
+                <img src={demologo} alt="logo" className='w-12 h-12 mr-3 rounded-full'/>
                 <h2 className='text-lg md:text-xl font-semibold text-indigo-950 leading-5'>
                     PrepPerfect
                 </h2>

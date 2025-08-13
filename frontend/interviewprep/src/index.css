@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 @theme {
     --font-display: "Urbanist", sans-serif;      
     --breakpoint-3xl: 1920px;
@@ -16,7 +21,11 @@
     body {
     background-color: #fcfbfc;
     overflow-x: hidden;
+    @apply text-black transition-colors duration-300;
     }
+    .dark body {
+    @apply bg-black text-white;
+  }
 }        
 /* Custom scrollbar styling */
 

@@ -19,10 +19,11 @@
     }
 
     body {
-    background-color: #fcfbfc;
-    overflow-x: hidden;
-    @apply text-black transition-colors duration-300;
+    /*background-color: #fcfbfc;*/
+    @apply bg-white text-black transition-colors duration-300;
+    overflow-x: hidden;    
     }
+
     .dark body {
     @apply bg-black text-white;
   }

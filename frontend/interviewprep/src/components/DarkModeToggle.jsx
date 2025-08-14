@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(
@@ -18,9 +18,9 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-700 dark:text-white transition-colors"
+      className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition-colors duration-300"
     >
-      {darkMode ? "Dark 🌙" : "Light 🌞"}
+      {darkMode ? "🌙 Dark" : "☀️ Light"}
     </button>
   );
 }

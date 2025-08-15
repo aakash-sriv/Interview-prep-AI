@@ -15,10 +15,10 @@ const ProfileInfoCard = () => {
     <div className='flex items-center'>
       <img  src={user.profileImageUrl} 
             alt="" 
-            className='w-11 h-11 bg-gray-300 rounded-full mr-3'
+            className='w-11 h-11 bg-gray-300 rounded-full mr-3 '
       />
       <div>
-        <div className='text-[15px] text-black font-bold leading-3'>
+        <div className='text-[15px] text-black font-bold leading-3 dark:text-white'>
           {user.name || ""}
         </div>
         <button 

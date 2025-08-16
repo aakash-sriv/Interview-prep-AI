@@ -190,7 +190,7 @@ const Navbar = () => {
     <div className={`h-16 transition-all duration-300 border-b backdrop-blur-md py-2.5 px-4 md:px-0 sticky top-0 z-30 ${
       darkMode 
         ? 'bg-gray-500 text-white border-gray-700' 
-        : 'bg-amber-600 text-black border-gray-200/50'
+        : 'bg-amber-100 text-black border-gray-200/50'
     }`}>
       <div className='container mx-auto flex items-center justify-between gap-5'>
         <Link to="/dashboard">  

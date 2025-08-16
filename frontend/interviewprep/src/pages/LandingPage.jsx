@@ -10,10 +10,13 @@ import Login from '../pages/Auth/Login';
 import SignUp from '../pages/Auth/SignUp';
 import { UserContext } from '../context/Usercontext';
 import demologo from "../assets/demologo.jpg"
+import { useDarkMode } from '../context/DarkModeContext';
+import DarkModeToggle from '../components/DarkModeToggle';
 
 const LandingPage = () => {
 
   const { user } = useContext(UserContext);
+  const { darkMode } = useDarkMode();
   const navigate = useNavigate();
   const[openAuthModel , setOpenAuthModel] = useState(false);
   
@@ -29,8 +32,8 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className='w-full min-h-full bg-[#FFFCEF]'>
-        <div className='w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0'/>
+      <div className='w-full min-h-full '>
+        <div className={`w-[500px] h-[500px]  blur-[65px] absolute top-0 left-0 ${darkMode ?  'bg-amber-200/20' : 'bg-amber-600/20'}`}/>
           <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
@@ -40,6 +43,8 @@ const LandingPage = () => {
                 PrepPerfect
               </div>
             </div>
+            <div className="flex items-center gap-7">
+            <DarkModeToggle />
             {user ? (<ProfileInfoCard /> 
             ) : (
             <button
@@ -49,6 +54,7 @@ const LandingPage = () => {
               Login / Sign  Up
             </button>
             )}
+            </div>
           </header>
 
         {/* Hero content */}
@@ -69,7 +75,7 @@ const LandingPage = () => {
           </div>
 
           <div className='w-full md:w-1/2'>
-            <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6'>
+            <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6 font-quicksand'>
               Get role-specified questions , expand answers when u need them , deep dive into concepts & organize everything in ur way.
               From preparation to mastery , your ultimate toolkit , all u ever need is HERE! 
             </p>

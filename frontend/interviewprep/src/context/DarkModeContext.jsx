@@ -4,15 +4,20 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false); // Always start with light mode
+  const [darkMode, setDarkMode] = useState(() => {
+    // Use sessionStorage instead of localStorage
+    // This persists only within the same tab session
+    const savedTheme = sessionStorage.getItem("theme");
+    return savedTheme === "dark";
+  });
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem("theme", "dark");
+      sessionStorage.setItem("theme", "dark"); // Changed to sessionStorage
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem("theme", "light");
+      sessionStorage.setItem("theme", "light"); // Changed to sessionStorage
     }
   }, [darkMode]);
 

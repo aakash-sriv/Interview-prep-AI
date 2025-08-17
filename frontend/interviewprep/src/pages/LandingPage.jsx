@@ -32,7 +32,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className='w-full min-h-full '>
+      <div className='w-full min-h-full'>
         <div className={`w-[500px] h-[500px]  blur-[65px] absolute top-0 left-0 ${darkMode ?  'bg-amber-200/20' : 'bg-amber-600/20'}`}/>
           <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
           {/*Header*/}
@@ -55,7 +55,9 @@ const LandingPage = () => {
             </button>
             )}
             </div>
+
           </header>
+    
 
         {/* Hero content */}
         <div className='flex flex-col md:flex-row items-center'>

@@ -174,7 +174,7 @@ const Navbar = () => {
 }
 
 export default Navbar;
-*/
+
 // src/components/Layouts/Navbar.jsx
 import React from 'react';
 import ProfileInfoCard from '../Cards/ProfileInfoCard';
@@ -199,6 +199,37 @@ const Navbar = () => {
             <h2 className={`text-lg md:text-xl font-semibold leading-5 ${
               darkMode ? 'text-white' : 'text-black'
             }`}>
+              PrepPerfect
+            </h2>
+          </div>
+        </Link>
+        
+        <div className="flex items-center gap-3">
+          <DarkModeToggle />
+          <ProfileInfoCard />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;
+*/
+// src/components/Layouts/Navbar.jsx
+import React from 'react';
+import ProfileInfoCard from '../Cards/ProfileInfoCard';
+import { Link } from "react-router-dom";
+import demologo from "../../assets/demologo.jpg";
+import DarkModeToggle from '../../components/DarkModeToggle';
+
+const Navbar = () => {
+  return (
+    <div className="h-16 navbar-theme text-theme-primary backdrop-blur-md py-2.5 px-4 md:px-0 sticky top-0 z-30 border-b border-theme-primary">
+      <div className='container mx-auto flex items-center justify-between gap-5'>
+        <Link to="/dashboard">  
+          <div className='flex items-center'>            
+            <img src={demologo} alt="logo" className='w-12 h-12 mr-3 rounded-full'/>
+            <h2 className='text-lg md:text-xl font-semibold leading-5 text-theme-primary'>
               PrepPerfect
             </h2>
           </div>

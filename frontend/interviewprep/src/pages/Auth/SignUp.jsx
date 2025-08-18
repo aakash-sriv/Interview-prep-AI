@@ -8,6 +8,8 @@ import { UserContext } from '../../context/Usercontext';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import uploadImage from '../../utils/uploadImage';
+import { useDarkMode } from '../../context/DarkModeContext'
+
 
 const SignUp = ({setCurrentPage}) => {
   const[profilePic ,setProfilePic] = useState(null);
@@ -16,6 +18,7 @@ const SignUp = ({setCurrentPage}) => {
   const[password ,setPassword] = useState("");
 
   const[error , setError]  = useState(null)
+  const { darkMode } = useDarkMode();
 
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -74,25 +77,26 @@ const SignUp = ({setCurrentPage}) => {
     }    
 };
 
-  return <div className='w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center'>
+  return <div className= {`w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center ${darkMode ?  'bg-cyan-900' : 'bg-blue-100'}`}>
           <h3 className='text-lg font-semibold text-black'>Create an account</h3>
-            <p className='text-xs text-slate-700 mt-[5px] mb-6'>
+            <p className={`text-xs  mt-[5px] mb-6 text-black`}>
               Join us today by entering your details below.
             </p>
 
-            <form onSubmit={handleSignUp}>
+            <form onSubmit={handleSignUp} >
 
             <ProfilePhotoSelector image={profilePic} setImage= {setProfilePic}/>
 
 
 
-              <div className='grid grid-cols-1 md:grid-cols-1 gap-2'>
+              <div className={`grid grid-cols-1 md:grid-cols-1 gap-2 `}>
                 <Input
                   value={fullName}
                   onChange={({target}) => setfullName(target.value)}
                   label= "Full Name"
                   placeholder= "Aakash"
                   type="text"
+                  className='text-black'
                 />
 
                 <Input
@@ -120,7 +124,7 @@ const SignUp = ({setCurrentPage}) => {
                 <p className='text-[13px] text-slate-800 mt-3'>
                   Already an account ? {" "}
                   <button 
-                    className='font-medium text-primary underline cursor-pointer'
+                    className='font-bold text-rose-400 underline cursor-pointer'
                     onClick={() => {
                     setCurrentPage("login");
                   }}

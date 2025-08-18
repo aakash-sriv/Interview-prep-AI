@@ -6,13 +6,15 @@ import { validateEmail } from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { UserContext } from '../../context/Usercontext';
+import { useDarkMode } from '../../context/DarkModeContext'
 
+{/*${darkMode ?  'bg-amber-200/20' : 'bg-amber-600/20'}*/}
 const Login = ({setCurrentPage}) => {
   const[email,setEmail] = useState("");
   const[password,setPassword] = useState("");
   const[error,setError] = useState(null);
 
-
+  const { darkMode } = useDarkMode();
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
   //handle login form submit
@@ -56,11 +58,11 @@ const Login = ({setCurrentPage}) => {
   
 
   return (
-      <div className='w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center'>
-        <h3 className='text-lg font-semibold text-black'>
+      <div className={`w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center ${darkMode ?  'bg-cyan-900' : 'bg-blue-100'}`}>
+        <h3 className='text-xl font-semibold text-black' >
           Welcome Back 
         </h3>
-        <p className='text-xs text-slate-700 mt-[5px] mb-6'>
+        <p className={`text-xs  mt-[5px] mb-6 ${darkMode ?  'text-gray-300' : 'text-slate-700'}`}>
           Please enter your details to login
         </p>
 
@@ -87,9 +89,9 @@ const Login = ({setCurrentPage}) => {
           LOGIN
         </button>
         <p className='text-[13px] text-slate-800 mt-3'>
-          Don't have any account ? {" "}
+          Don't have any account?  {" "}
           <button 
-          className='font-medium text-primary underline cursor-pointer'
+          className='font-bold text-rose-400 underline cursor-pointer'
           onClick={()=>{
             setCurrentPage("signup");
           }}  

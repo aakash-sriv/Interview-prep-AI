@@ -32,28 +32,30 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className='w-full min-h-full'>
-        <div className={`w-[500px] h-[500px]  blur-[65px] absolute top-0 left-0 ${darkMode ?  'bg-amber-200/20' : 'bg-amber-600/20'}`}/>
+      <div className='w-full min-h-full relative'>
+        {/*${darkMode ?  'bg-amber-200/20' : 'bg-amber-600/20'}*/}
+          <div className={`w-[500px] h-[500px]  blur-[65px] absolute top-0 left-0 `}/>
           <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
             <div className='flex items-center mr-3'>
               <img src={demologo} alt="logo" className='w-[100px] h-[100px] mt-5 mr-6 rounded-sm '/>
-              <div className='text-3xl text-sky-950 font-bold mt-4 hover:shadow-2xl hover:shadow-orange-500'>
+              <div className={`text-3xl ${darkMode ?  'text-sky-400' : 'text-sky-800'} font-bold mt-4 hover:shadow-2xl hover:shadow-teal-600`}>
                 PrepPerfect
               </div>
             </div>
-            <div className="flex items-center gap-7">
-            <DarkModeToggle />
+            <div className="flex items-center gap-1">
+            
             {user ? (<ProfileInfoCard /> 
             ) : (
             <button
-            className='bg-linear-to-r from-[#FF9234] to-[#e8974b] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer '
+            className='bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer '
             onClick={()=> setOpenAuthModel(true)}
             >
               Login / Sign  Up
             </button>
             )}
+            <DarkModeToggle />
             </div>
 
           </header>
@@ -81,7 +83,7 @@ const LandingPage = () => {
               Get role-specified questions , expand answers when u need them , deep dive into concepts & organize everything in ur way.
               From preparation to mastery , your ultimate toolkit , all u ever need is HERE! 
             </p>
-            <button className='bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100  hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer '
+            <button className='bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100  hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer '
                     onClick={handleCTA}>
                       Get Started
             </button>

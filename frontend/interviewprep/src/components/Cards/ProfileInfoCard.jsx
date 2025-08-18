@@ -1,47 +1,4 @@
-/*
-import React, { useContext } from 'react'
-import { UserContext } from '../../context/Usercontext'
-import { useNavigate } from 'react-router-dom';
-import { useDarkMode } from '../../context/DarkModeContext';
 
-const ProfileInfoCard = () => {
-  const { user, clearUser } = useContext(UserContext);
-  const { darkMode } = useDarkMode();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.clear();
-    clearUser();
-    navigate("/");
-  }
-
-  return user && (
-    <div className='flex items-center'>
-      <img  
-        src={user.profileImageUrl} 
-        alt="" 
-        className='w-11 h-11 bg-gray-300 rounded-full mr-3'
-      />
-      <div>
-        <div className={`text-[15px] font-bold leading-3 ${
-          darkMode ? 'text-white' : 'text-black'
-        }`}>
-          {user.name || ""}
-        </div>
-        <button 
-          className='text-amber-600 text-sm font-semibold cursor-pointer hover:underline'
-          onClick={handleLogout}   
-        >
-          Logout
-        </button>
-      </div>
-    </div>
-  )
-}
-
-export default ProfileInfoCard;
-*/
-// src/components/Cards/ProfileInfoCard.jsx
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../../context/Usercontext'
 import { useNavigate } from 'react-router-dom';

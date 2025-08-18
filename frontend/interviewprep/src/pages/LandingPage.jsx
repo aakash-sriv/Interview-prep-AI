@@ -39,8 +39,8 @@ const LandingPage = () => {
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
             <div className='flex items-center mr-3'>
-              <img src={demologo} alt="logo" className='w-[100px] h-[100px] mt-5 mr-6 rounded-sm '/>
-              <div className={`text-3xl ${darkMode ?  'text-sky-400' : 'text-sky-800'} font-bold mt-4 hover:shadow-2xl hover:shadow-teal-600`}>
+              <img src={demologo} alt="logo" className={`w-[100px] h-[100px] mt-5 mr-6 rounded-sm  border ${darkMode ?  'border-[#aa487e] ' : 'border-[#485b7a]'}`}/>
+              <div className={`text-3xl ${darkMode ?  'text-[#aa487e] ' : 'text-[#485b7a]'} font-bold mt-4 hover:shadow-2xl hover:shadow-teal-600`}>
                 PrepPerfect
               </div>
             </div>
@@ -65,13 +65,13 @@ const LandingPage = () => {
         <div className='flex flex-col md:flex-row items-center'>
           <div className='w-full md:w-1/2 pr-4 mb-8 md:mb-0'>
             <div className='flex items-center justify-left mb-2'>
-              <div className='flex items-center gap-2 text-[13px] text-orange-500 font-semibold bg-amber-100  px-3 py-1 rounded-full border border-amber-300'>
+              <div className='flex items-center gap-2 text-[13px] bg-[#d3abe7] font-semibold text-[#7c0539]  px-3 py-1 rounded-full border border-[#ff00ff]'>
                  <LuSparkles/>AI Powered
               </div>
             </div>
             <h1 className='text-5xl text-black font-medium mb-6 leading-tight'>
               Ace Interviews with <br />
-              <span className='text-transparent bg-clip-text bg-[radial-gradient(circle,_#FF9324_0%,_#FCD760_100%)] bg-[length:200%_200%] animate-text-shine font-semibold '>
+              <span className='text-transparent bg-clip-text bg-[radial-gradient(circle,_#C9257D_0%,_#4b0cca_100%)] bg-[length:200%_200%] animate-text-shine font-semibold '>
                 AI-Powered
               </span> {" "}
               Learning
@@ -79,11 +79,11 @@ const LandingPage = () => {
           </div>
 
           <div className='w-full md:w-1/2'>
-            <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6 font-quicksand'>
+            <p className={`text-[19px] ${darkMode ?  'text-[#99c0d9]' : 'text-[#05314c]'} mr-0 md:mr-20 mb-6 font-sans`}>
               Get role-specified questions , expand answers when u need them , deep dive into concepts & organize everything in ur way.
               From preparation to mastery , your ultimate toolkit , all u ever need is HERE! 
             </p>
-            <button className='bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100  hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer '
+            <button className='bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100  hover:text-[#eeb6dc]  transition-colors cursor-pointer '
                     onClick={handleCTA}>
                       Get Started
             </button>
@@ -103,25 +103,25 @@ const LandingPage = () => {
         </div>
 
 
-        <div className='w-full min-h-full bg-[#FFFCEF] mt-10'>
-          <div className='container mx-auto px-4 pt-10 pb-20'>
+        <div className='w-full min-h-full  mt-10'>
+          <div className={`container mx-auto px-4 pt-10 pb-20 `}>
             <section className='mt-5'>
               <h2 className='text-2xl font-medium text-center mb-12'>
                 Features that make you shine
               </h2>
 
-              <div className='flex flex-col items-center gap-8'>
+              <div className={`flex flex-col items-center gap-8`}>
                 {/*First 3 cards*/}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 w-full'>
+                <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 w-full `}>
                   {APP_FEATURES.slice(0,3).map((feature) => (
                     <div
                     key={feature.id}
-                    className='bg-[#FFFEF8] p-6 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100'
+                    className={` ${darkMode ?  ' text-gray-50 bg-teal-800/20' : 'text-gray-700 bg-teal-300/20'} p-6 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100`}
                     >
-                      <h3 className='text-base font-semibold mb-3'>
+                      <h3 className='text-base font-sans font-semibold mb-3'>
                         {feature.title}
                       </h3>
-                      <p className='text-gray-600'>{feature.description}</p>
+                      <p className='font-mono'>{feature.description}</p>
                     </div>
                   ))}
                 </div>
@@ -131,12 +131,12 @@ const LandingPage = () => {
                   {APP_FEATURES.slice(3).map((feature) => (
                     <div
                     key={feature.id}
-                    className='bg-[#FFFEF8] p-6 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100 '
+                    className={`${darkMode ?  ' text-gray-50 bg-teal-800/20' : 'text-gray-700 bg-teal-300/20'} p-6 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100 `}
                     >
-                      <h3 className='text-base font-semibold mb-3'>
+                      <h3 className='text-base font-sans font-semibold mb-3'>
                         {feature.title}
                       </h3>
-                      <p className='text-gray-600'>{feature.description}</p>
+                      <p className=' font-mono'>{feature.description}</p>
                     </div>
                   ))}
                 </div>
@@ -146,8 +146,8 @@ const LandingPage = () => {
         </div>
 
 
-      <div className='text-sm bg-gray-50 text-secondary text-center p-5 mt-5 '>
-        Made with 💌 ©️Aakash</div>
+      <div className='text-sm bg-[#22C55E25] text-secondary text-center p-5 mt-5 '>
+        Made with 💌 | ©️Aakash</div>
      </div>
 
 

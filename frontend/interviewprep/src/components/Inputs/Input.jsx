@@ -17,7 +17,7 @@ const Input = ({value , onChange , label , placeholder , type}) => {
                 (showPassword ? "text" : "password") : type
             }
             placeholder= {placeholder}
-            className='w-full bg-transparent outline-none'
+            className='w-full '
             value={value}
             onChange={(e)=> onChange(e)}
             />
@@ -27,7 +27,7 @@ const Input = ({value , onChange , label , placeholder , type}) => {
                     {showPassword ? (
                         <FaRegEye
                             size ={22}
-                            className='text-primary cursor-pointer'
+                            className='text-[#559ea4] cursor-pointer'
                             onClick={() => toggleShowPassword()}
                         />
                     ) : (

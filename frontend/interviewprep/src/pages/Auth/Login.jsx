@@ -79,7 +79,7 @@ const Login = ({setCurrentPage}) => {
             value={password}
             onChange ={({ target }) => setPassword(target.value)}
             label ="Password"
-            placeholder= "Minimum 8 character"
+            placeholder= "Minimum 8 characters"
             type="password" 
           />
 

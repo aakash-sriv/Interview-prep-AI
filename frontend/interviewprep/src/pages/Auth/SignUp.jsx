@@ -79,7 +79,7 @@ const SignUp = ({setCurrentPage}) => {
 
   return <div className= {`w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center ${darkMode ?  'bg-cyan-900' : 'bg-blue-100'}`}>
           <h3 className='text-lg font-semibold text-black'>Create an account</h3>
-            <p className={`text-xs  mt-[5px] mb-6 text-black`}>
+            <p className={`text-xs  mt-[5px] mb-6 text-black ${darkMode ?  'text-gray-300' : 'text-slate-700'}`}>
               Join us today by entering your details below.
             </p>
 
@@ -105,7 +105,7 @@ const SignUp = ({setCurrentPage}) => {
                   label= "Email address"
                   placeholder= "Aakash@example.com"
                   type="text"
-                />
+                />   
 
                 <Input
                   value={password}

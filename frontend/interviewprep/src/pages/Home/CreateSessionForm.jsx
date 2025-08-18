@@ -4,6 +4,8 @@ import Input from '../../components/Inputs/Input';
 import Spinnerloader from '../../components/Loader/Spinnerloader';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
+import { useDarkMode } from '../../context/DarkModeContext';
+
 
 const CreateSessionForm = () => {
     const [formData , setFormData] = useState({
@@ -17,6 +19,7 @@ const CreateSessionForm = () => {
     const[error , setError] = useState(null);
 
     const navigate = useNavigate();
+    const { darkMode } = useDarkMode();
 
     const handleChange = (key , value) => {
         setFormData((prevData) => ({
@@ -69,11 +72,11 @@ const CreateSessionForm = () => {
         }
     };
 
-  return <div className='w-[90vw] md:w-[35vw] p-7 flex flex-col justify-center'>
-        <h3 className='text-lg font-semibold text-black'>
+  return <div className={`w-[90vw] md:w-[35vw] p-7 flex flex-col justify-center ${darkMode ?  'bg-cyan-900' : 'bg-blue-100'}`}>
+        <h3 className='text-lg font-semibold text-black '>
             Start a New Interview Journey
         </h3>
-        <p className='text-xs text-slate-700 mt-[5px] mb-3'>
+        <p className={`text-xs ${darkMode ?  'text-gray-300' : 'text-slate-700'} mt-[5px] mb-3`}>
             Fill out a few quick details and unlock your personalized set of Interview Questions!
         </p>
 

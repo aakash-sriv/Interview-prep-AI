@@ -78,7 +78,7 @@ const Dashboard = () => {
           ))}
         </div>
 
-        <button className='h-12 md:h-12 flex items-center justify-center gap-3 bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-[#bce4f8] px-7 py-2.5 rounded-full hover:bg-black hover:text-[#edc9d1] transition-colors cursor-pointer hover:shadow-2xl hover:shadow-[#edc9d1] fixed bottom-10 md:bottom-20 right-10 md:right-20'
+        <button className='h-12 md:h-12 flex items-center justify-center gap-3 bg-linear-to-r from-[#c9257d] to-[#ab1ece] text-sm font-semibold text-[#bce4f8] px-7 py-2.5 rounded-full hover:bg-black hover:text-[#edc9d1] transition-colors cursor-pointer hover:shadow-md hover:shadow-[#5b3c6a] fixed bottom-10 md:bottom-20 right-10 md:right-20'
         onClick={() => setOpenCreateModal(true)}
         >
           <LuPlus className='text-2xl text-[#bce4f8]'/>

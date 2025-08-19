@@ -5,12 +5,17 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { div } from 'framer-motion/client';
+import { useDarkMode } from '../../../context/DarkModeContext';
+
 
 const AIResponsePreview = ({content}) => {
+    const { darkMode } = useDarkMode();
+    
     if(!content) return null
   return (
+
     <div className='max-w-4xl mx-auto'>
-        <div className='text-[14px] prose prose-slate dark:prose-invert max-w-none'>
+        <div className={`text-[14px] text prose prose-slate ${darkMode ?  'bg-cyan-950' : 'bg-blue-100'} rounded-sm max-w-none pr-6 pl-6 pt-5 pb-4`}>
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
@@ -24,9 +29,10 @@ const AIResponsePreview = ({content}) => {
                             <CodeBlock
                                 code = {String(children).replace(/\n$/ , '')}
                                 language={language}
+                                
                             />
                         ) : (
-                            <code className='px-1 py-0.5 bg-gray-100 rounded text-sm' {...props}>
+                            <code className={`px-1 py-0.5 ${darkMode ?  'bg-slate-300 text-slate-700' : 'bg-slate-700 text-slate-300'} rounded text-sm`} {...props}>
                                 {children}
                             </code>
                         );

@@ -221,15 +221,17 @@ import ProfileInfoCard from '../Cards/ProfileInfoCard';
 import { Link } from "react-router-dom";
 import demologo from "../../assets/demologo.jpg";
 import DarkModeToggle from '../../components/DarkModeToggle';
+import { useDarkMode } from '../../context/DarkModeContext';
 
 const Navbar = () => {
+  const { darkMode } = useDarkMode();
   return (
     <div className="h-16 navbar-theme text-theme-primary backdrop-blur-md py-2.5 px-4 md:px-0 sticky top-0 z-30 border-b border-theme-primary">
       <div className='container mx-auto flex items-center justify-between gap-5'>
         <Link to="/dashboard">  
           <div className='flex items-center'>            
-            <img src={demologo} alt="logo" className='w-12 h-12 mr-3 rounded-full'/>
-            <h2 className='text-lg md:text-xl font-semibold leading-5 text-theme-primary'>
+            <img src={demologo} alt="logo" className={`w-12 h-12 mr-3 rounded-full border ${darkMode ?  'border-[#aa487e] ' : 'border-[#485b7a]'}`}/>
+            <h2 className={`text-lg md:text-xl font-semibold leading-5 text-theme-primary ${darkMode ?  'text-[#6cabba] ' : 'text-[#485b7a]'}`}>
               PrepPerfect
             </h2>
           </div>

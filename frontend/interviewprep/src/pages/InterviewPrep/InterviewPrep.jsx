@@ -13,9 +13,11 @@ import QuestionCard from '../../components/Cards/QuestionCard';
 import AIResponsePreview from './components/AIResponsePreview';
 import Drawer from '../../components/Drawer';
 import SkeletonLoader from '../../components/Loader/SkeletonLoader'; 
+import { useDarkMode } from '../../context/DarkModeContext';
 
 const InterviewPrep = () => {
   
+  const { darkMode } = useDarkMode();
   const { sessionId } = useParams();
   const [sessionData , setSessionData] = useState(null);
   const [errorMsg , setErrorMsg] = useState("");
@@ -153,7 +155,7 @@ const InterviewPrep = () => {
     <div className='container mx-auto pt-4 pb-4 px-4 md:px-0'>
       <h2 className='text-lg font-semibold color-black'>Interview Q & A</h2>
 
-      <div className='grid grid-cols-12 gap-4 mt-5 mb-10'>
+      <div className={`grid grid-cols-12 gap-4 mt-5 mb-10 `}>
         <div
           className={`col-span-12 ${openLeanMoreDrawer ? "md:col-span-7" : "md:col-span-8"
             }`}
@@ -190,9 +192,9 @@ const InterviewPrep = () => {
                     
                       {!isLoading && 
                         sessionData?.questions?.length == index + 1 && (
-                          <div className='flex items-center justify-center mt-5'>
+                          <div className='flex items-center justify-center mt-5 '>
                             <button
-                              className='flex items-center gap-3 text-sm text-white font-medium bg-black px-5 py-2 mr-2 rounded text-nowrap cursor-pointer'
+                              className='flex items-center gap-3 text-sm text-white font-medium bg-linear-to-r from-[#02645a] to-[#398830] px-5 py-2 mr-2 rounded text-nowrap cursor-pointer'
                               disabled={isLoading || isUpdateLoader}
                               onClick={uploadMoreQuestions}
                             >

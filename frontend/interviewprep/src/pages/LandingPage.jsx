@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import Modal from "../components/Modal"
-import hero_page from "../assets/hero_page.png";
 import {APP_FEATURES} from "../utils/data"; 
 import { useNavigate } from 'react-router-dom';
 import { LuSparkles } from 'react-icons/lu';
@@ -10,6 +9,8 @@ import Login from '../pages/Auth/Login';
 import SignUp from '../pages/Auth/SignUp';
 import { UserContext } from '../context/Usercontext';
 import demologo from "../assets/demologo.jpg"
+import heropage_light from "../assets/heropage_light.png"
+import heropage_dark from "../assets/heropage_dark.png"
 import { useDarkMode } from '../context/DarkModeContext';
 import DarkModeToggle from '../components/DarkModeToggle';
 
@@ -39,7 +40,10 @@ const LandingPage = () => {
           {/*Header*/}
           <header className='flex justify-between items-center mb-16'>
             <div className='flex items-center mr-3'>
-              <img src={demologo} alt="logo" className={`w-[100px] h-[100px] mt-5 mr-6 rounded-sm  border ${darkMode ?  'border-[#aa487e] ' : 'border-[#485b7a]'}`}/>
+              <img 
+                src={demologo} 
+                alt="logo" 
+                className={`w-[100px] h-[100px] mt-5 mr-6 rounded-sm  border ${darkMode ?  'border-[#aa487e] ' : 'border-[#485b7a]'}`}/>
               <div className={`text-3xl ${darkMode ?  'text-[#aa487e] ' : 'text-[#485b7a]'} font-bold mt-4 hover:shadow-2xl hover:shadow-teal-600`}>
                 PrepPerfect
               </div>
@@ -96,7 +100,7 @@ const LandingPage = () => {
         <div>
           <section className='flex items-center justify-center -mt-36'>
             <img 
-              src={hero_page}
+              src={darkMode ? heropage_dark : heropage_light}
               alt="Hero Image" 
               className='w-[70vw]  rounded-2xl'/>
           </section>

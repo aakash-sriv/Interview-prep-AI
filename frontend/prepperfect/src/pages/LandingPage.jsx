@@ -225,11 +225,16 @@ const LandingPage = () => {
             <div className='flex flex-col sm:hidden'>
               {/* Top row: logo (left/centered) + buttons on right */}
               <div className='flex items-center justify-between'>
+                <div className='flex gap-2 '>
                 <img
                   src={demologo}
                   alt="logo"
                   className={`w-[45px] h-[45px] rounded-sm border ${darkMode ? 'border-[#aa487e]' : 'border-[#485b7a]'}`}
                 />
+                <div className={`text-lg ${darkMode ? 'text-[#aa487e]' : 'text-[#485b7a]'} font-bold mb-2 mt-2`}>
+                  PrepPerfect
+                </div>
+                </div>
                 <div className="flex items-center gap-2">
                   {user ? (
                     <ProfileInfoCard />
@@ -247,9 +252,7 @@ const LandingPage = () => {
 
               {/* Title + AI powered badge */}
               <div className='flex flex-col items-center mt-4'>
-                <div className={`text-lg ${darkMode ? 'text-[#aa487e]' : 'text-[#485b7a]'} font-bold mb-2`}>
-                  PrepPerfect
-                </div>
+                
                 <div className='flex items-center gap-2 text-[11px] bg-[#d3abe7] font-semibold text-[#7c0539] px-2 py-1 rounded-full border border-[#ff00ff]'>
                   <LuSparkles /> AI Powered
                 </div>

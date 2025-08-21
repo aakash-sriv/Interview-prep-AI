@@ -6,7 +6,7 @@ const Drawer = ({ isOpen , onClose , title , children}) => {
     const { darkMode } = useDarkMode();
     
     return <div 
-    className= {`fixed top-[64px] right-0 z-40 h-[calc(100dvh-64px)] ${darkMode ?  'bg-purple-700/20' : 'bg-sky-500/20'} p-4 overflow-y-auto transition-transform drawer-theme w-full md:w-[40vw] shadow-2xl shadow-cyan-800/10 border-r border-theme-primary ${
+    className= {`fixed top-[64px] right-0 z-40 h-[calc(100dvh-64px)] ${darkMode ?  'bg-indigo-900/75' : 'bg-sky-200/75'} p-4 overflow-y-auto transition-transform drawer-theme w-full md:w-[40vw] shadow-2xl shadow-cyan-800/10 border-r border-theme-primary ${
         isOpen ? "translate-x-0" : "translate-x-full"
     }`}
         tabIndex = "-1"
